@@ -1,52 +1,33 @@
 # Rock, Paper, Scissors
-computer_options =["rock","paper","sissors"]
+human_move = " "
 
-puts "Welcome to Rock, Paper, Sissors!"
+while human_move.downcase != "quit"
 
-puts "Your move: rock, paper, or scissors?"
+  computer_options =["rock","paper","sissors"]
 
-human_move = gets.chomp.downcase #downcasng input eliminates case sensitivity
+  puts "Welcome to Rock, Paper, Sissors!"
 
-if
-computer_options.include?(human_move) == false
-puts  "That doesn't appear to be a valid move..."
-exit
+  puts "Your move: rock, paper, or scissors?"
 
-else
-computer_move = computer_options.sample
+  human_move = gets.chomp.downcase #downcasing input eliminates case sensitivity
 
-puts computer_move
+  if computer_options.include?(human_move) == false
+    puts  "That doesn't appear to be a valid move..."
+  else
+    computer_move = computer_options.sample
+    puts computer_move
+    if (human_move == "rock" and computer_move == "sissors") or (human_move == "sissors" and computer_move == "paper") or (human_move == "paper" and computer_move == "rock")
+      puts "You Win!"
+    else
+      if (human_move == computer_move)
+        puts "It's a tie!"
+      else
+        if computer_options.include?(human_move)
+          puts "You Lose!"
+        else
+        end
+      end
+    end
+  end
 end
-
-if
-  (human_move == "rock" and computer_move == "sissors")
-  puts "You Win!"
-else
-  if
-  (human_move == "sissors" and computer_move == "paper")
-puts "You Win!"
-else
-  if
-(human_move == "paper" and computer_move == "rock")
-puts "You Win!"
-else
-  if
-(human_move == "rock" and computer_move == "rock")
-puts "It's a tie!"
-else
-  if
-(human_move == "sissors" and computer_move == "sissors")
-puts "It's a tie!"
-else
-  if
-(human_move == "paper" and computer_move == "paper")
-puts "It's a tie!"
-else
-puts "You Lose!"
-
-end
-end
-end
-end
-end
-end
+  puts "Come again soon!"
