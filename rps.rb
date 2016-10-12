@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors
 human_move = " "
+human_wins = 0
+computer_wins = 0
 
 while human_move.downcase != "quit"
 
@@ -18,16 +20,19 @@ while human_move.downcase != "quit"
     puts computer_move
     if (human_move == "rock" and computer_move == "sissors") or (human_move == "sissors" and computer_move == "paper") or (human_move == "paper" and computer_move == "rock")
       puts "You Win!"
+      human_wins = human_wins + 1
     else
       if (human_move == computer_move)
         puts "It's a tie!"
       else
         if computer_options.include?(human_move)
           puts "You Lose!"
+          computer_wins = computer_wins + 1
         else
         end
       end
     end
   end
 end
-  puts "Come again soon!"
+
+puts "Human - " + human_wins.to_s + " Computer - " + computer_wins.to_s
